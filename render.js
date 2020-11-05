@@ -31,7 +31,7 @@ newComments=`
                     ${newComments}
                     
 
-                    <input type="text" placeholder="What's on your mind?" class="inputComment">
+                    <input type="text" placeholder="Leave a comment" class="inputComment">
                     <button class="commentIt" >Comment</button>
 
 
