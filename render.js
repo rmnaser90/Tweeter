@@ -1,4 +1,3 @@
-
 const postsContainer= $('#postsContainer')
 
 const render = function () {
@@ -6,6 +5,7 @@ const render = function () {
 let updatedPosts= tweeter.getPosts()
 
 for (const post of updatedPosts) {
+
  let newComments=``
     for (const comment of post.comments) {
         
@@ -20,6 +20,7 @@ newComments=`
 
 `+newComments
     }
+    console.log(newComments);
 
     let newPost=$(`
     
@@ -29,8 +30,6 @@ newComments=`
 
                 <div class="commentsContainer">
                     ${newComments}
-                    
-
                     <input type="text" placeholder="Leave a comment" class="inputComment">
                     <button class="commentIt" >Comment</button>
 
@@ -39,10 +38,6 @@ newComments=`
 
             </div>
 
-    
-    
-    
-    
     
     
     

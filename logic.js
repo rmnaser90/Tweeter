@@ -1,6 +1,6 @@
 const Tweeter = function () {
     let posts = [
-        
+
         {
             text: "First post!",
             id: "p1",
@@ -23,7 +23,7 @@ const Tweeter = function () {
 
 
     let postIdCounter = posts.length
-    let commentIdCounter=0;
+    let commentIdCounter = 0;
     for (const post of posts) {
         commentIdCounter += post.comments.length
     }
@@ -35,59 +35,76 @@ const Tweeter = function () {
     }
     const addPost = function (text) {
         postIdCounter++
-        let newPost = {text, id: 'p'+ postIdCounter,comments:[] }
+        let newPost = { text, id: 'p' + postIdCounter, comments: [] }
         posts.push(newPost)
-        
+
     }
     const removePost = function (id) {
 
         for (const i in posts) {
-            if (posts[i].id==id) {
-                posts.splice(i,1)
-                
+            if (posts[i].id == id) {
+                posts.splice(i, 1)
+
             }
         }
-        
+
     }
 
-    const addComment = function (text,postId) {
+    const addComment = function (text, postId) {
         commentIdCounter++
-        newComment={id: 'c'+commentIdCounter, text}
+        newComment = { id: 'c' + commentIdCounter, text }
         for (const i in posts) {
-            if (posts[i].id==postId) {
+            if (posts[i].id == postId) {
                 posts[i].comments.push(newComment)
-                
+
             }
         }
 
-        
+
     }
 
-    const removeComment= function(postId,commentId){
-for (const i in posts) {
-    if (posts[i].id==postId) {
-        for (const j in posts[i].comments) {
-            if (posts[i].comments[j].id==commentId) {
-                posts[i].comments.splice(j,1)
-                
+    const removeComment = function (postId, commentId) {
+        for (const i in posts) {
+            if (posts[i].id == postId) {
+                for (const j in posts[i].comments) {
+                    if (posts[i].comments[j].id == commentId) {
+                        posts[i].comments.splice(j, 1)
+
+                    }
+                }
+
             }
         }
-        
-    }
-}
 
 
     }
 
-return {
-addPost,
-getPosts,
-removePost,
-addComment,
-removeComment
+    return {
+        addPost,
+        getPosts,
+        removePost,
+        addComment,
+        removeComment
 
+    }
 }
-}
+
+const tweeter = Tweeter()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const tweeter = Tweeter()
 // tweeter.addPost("hello")
@@ -98,10 +115,6 @@ removeComment
 // tweeter.addComment('p4','good to see you')
 // tweeter.removeComment('p2','c6')
 // console.log(tweeter.getPosts());
-
-const tweeter = Tweeter()
-
-
 
 // console.log(tweeter.getPosts())
 
